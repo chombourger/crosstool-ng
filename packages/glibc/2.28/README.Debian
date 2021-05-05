@@ -1,0 +1,485 @@
+git-updates.diff
+	renamed: 0003-debian-git-updates.patch
+	status: applied
+
+locale/check-unknown-symbols.diff
+	renamed: 0004-debian-check-unknown-symbols.patch
+	status: applied
+
+locale/locale-print-LANGUAGE.diff
+	renamed: 0005-debian-locale-print-LANGUAGE.patch
+	status: applied
+
+locale/LC_IDENTIFICATION-optional-fields.diff
+	renamed: 0006-debian-LC_IDENTIFICATION-optional-fields.patch
+	status: applied
+
+localedata/local-all-no-archive.diff
+	renamed: 0007-debian-local-all-no-archive.patch
+	status: applied
+
+localedata/sort-UTF8-first.diff
+	renamed: 0008-debian-sort-UTF8-first.patch
+	status: applied
+
+localedata/supported.diff
+	renamed: 0009-debian-supported.patch
+	status: applied
+
+localedata/locale-eu_FR.diff
+	renamed: 0010-debian-locale-eu_FR.patch
+	status: applied
+
+localedata/locale-ku_TR.diff
+	renamed: 0011-debian-locale-ku_TR.patch
+	status: applied
+
+localedata/fo_FO-date_fmt.diff
+	renamed: 0012-debian-fo_FO-date_fmt.patch
+	status: applied
+
+localedata/locales_CH.diff
+	renamed: 0013-debian-locales_CH.patch
+	status: applied
+
+localedata/locales-fr.diff
+	renamed: 0014-debian-locales-fr.patch
+	status: applied
+
+localedata/locale-en_DK.diff
+	renamed: 0015-debian-locale-en_DK.patch
+	status: applied
+
+localedata/locale-zh_TW.diff
+	renamed: 0016-debian-locale-zh_TW.patch
+	status: applied
+
+localedata/tailor-iso14651_t1.diff
+	renamed: 0017-debian-tailor-iso14651_t1.patch
+	status: applied
+
+localedata/submitted-bz9725-locale-sv_SE.diff
+	renamed: 0018-debian-submitted-bz9725-locale-sv_SE.patch
+	status: applied
+
+localedata/locale-C.diff
+	renamed: 0019-debian-locale-C.patch
+	status: applied
+
+localedata/submitted-en_AU-date_fmt.diff
+	renamed: 0020-debian-submitted-en_AU-date_fmt.patch
+	status: applied
+
+localedata/submitted-es_MX-decimal_point.diff
+	renamed: 0021-debian-submitted-es_MX-decimal_point.patch
+	status: applied
+
+localedata/submitted-it_IT-thousands_sep.diff
+	renamed: 0022-debian-submitted-it_IT-thousands_sep.patch
+	status: applied
+
+localedata/git-en_US-date_fmt.diff
+	renamed: 0023-debian-git-en_US-date_fmt.patch
+	status: applied
+
+alpha/local-gcc4.1.diff
+	renamed: 0024-debian-local-gcc4.1.patch
+	status : applied
+
+alpha/submitted-dl-support.diff
+	renamed: 0025-debian-submitted-dl-support.patch
+	status : applied
+
+alpha/local-string-functions.diff
+	renamed: 0026-debian-local-string-functions.patch
+	status : applied
+
+alpha/submitted-fts64.diff
+	renamed: 0027-debian-submitted-fts64.patch
+	status : applied
+
+alpha/submitted-makecontext.diff
+	renamed: 0028-debian-submitted-makecontext.patch
+	status : applied
+
+arm/local-sigaction.diff
+	renamed: 0029-debian-local-sigaction.patch
+	status : applied
+
+arm/unsubmitted-ldconfig-cache-abi.diff
+	renamed: 0030-debian-unsubmitted-ldconfig-cache-abi.patch
+	status : applied
+
+arm/unsubmitted-ldso-abi-check.diff
+	renamed: 0031-debian-unsubmitted-ldso-abi-check.patch
+	status : applied
+
+arm/local-soname-hack.diff
+	renamed: 0032-debian-local-soname-hack.patch
+	status : applied
+
+arm/local-vfp-sysdeps.diff
+	renamed: 0033-debian-local-vfp-sysdeps.patch
+	status : applied
+
+arm/unsubmitted-ldso-multilib.diff
+	renamed: 0034-debian-unsubmitted-ldso-multilib.patch
+	status : applied
+
+arm/local-arm-futex.diff
+	renamed: 0035-debian-local-arm-futex.patch
+	status : applied
+
+hppa/local-inlining.diff
+	renamed: 0036-debian-local-inlining.patch
+	status : applied
+
+hurd-i386/local-enable-ldconfig.diff
+	renamed: 0037-debian-local-enable-ldconfig.patch
+	status : applied
+
+hurd-i386/tg-context_functions.diff
+	renamed: 0038-debian-tg-context_functions.patch
+	status : applied
+
+hurd-i386/tg-sysvshm.diff
+	renamed: 0039-debian-tg-sysvshm.patch
+	status : applied
+
+hurd-i386/tg-thread-cancel.diff
+	renamed: 0040-debian-tg-thread-cancel.patch
+	status : applied
+
+hurd-i386/tg-bigmem.diff
+	renamed: 0041-debian-tg-bigmem.patch
+	status : applied
+
+hurd-i386/local-disable-ioctls.diff
+	renamed: 0042-debian-local-disable-ioctls.patch
+	status : applied
+
+hurd-i386/tg-locarchive.diff
+	renamed: 0043-debian-tg-locarchive.patch
+	status : applied
+
+hurd-i386/tg-sendmsg-SCM_RIGHTS.diff
+	renamed: 0044-debian-tg-sendmsg-SCM_RIGHTS.patch
+	status : applied
+
+hurd-i386/tg-sendmsg-SCM_CREDS.diff
+	renamed: 0045-debian-tg-sendmsg-SCM_CREDS.patch
+	status : applied
+
+hurd-i386/tg-mach-hurd-link.diff
+	renamed: 0046-debian-tg-mach-hurd-link.patch
+	status : applied
+
+hurd-i386/local-ED.diff
+	renamed: 0047-debian-local-ED.patch
+	status : applied
+
+hurd-i386/local-madvise_warn.diff
+	renamed: 0048-debian-local-madvise_warn.patch
+	status : applied
+
+hurd-i386/tg-hurdsig-fixes.diff
+	renamed: 0049-debian-tg-hurdsig-fixes.patch
+	status : applied
+
+hurd-i386/tg-hurdsig-global-dispositions.diff
+	renamed: 0050-debian-tg-hurdsig-global-dispositions.patch
+	status : applied
+
+hurd-i386/local-hurdsig-global-dispositions-version.diff
+	renamed: 0051-debian-local-hurdsig-global-dispositions-version.patch
+	status : applied
+
+hurd-i386/tg-hurdsig-SA_SIGINFO.diff
+	renamed: 0052-debian-tg-hurdsig-SA_SIGINFO.patch
+	status : applied
+
+hurd-i386/tg-hurdsig-fixes-2.diff
+	renamed: 0053-debian-tg-hurdsig-fixes-2.patch
+	status : applied
+
+hurd-i386/tg-hooks.diff
+	renamed: 0054-debian-tg-hooks.patch
+	status : applied
+
+hurd-i386/libpthread_version.diff
+	renamed: 0055-debian-libpthread_version.patch
+	status : applied
+
+hurd-i386/local-usr.diff
+	renamed: 0056-debian-local-usr.patch
+	status : applied
+
+hurd-i386/tg-hurdsig-boot-fix.diff
+	renamed: 0057-debian-tg-hurdsig-boot-fix.patch
+	status : applied
+
+hurd-i386/tg-single-select-timeout.diff
+	renamed: 0058-debian-tg-single-select-timeout.patch
+	status : applied
+
+hurd-i386/tg-setitimer.diff
+	renamed: 0059-debian-tg-setitimer.patch
+	status : applied
+
+hurd-i386/tg-pie-sbrk.diff
+	renamed: 0060-debian-tg-pie-sbrk.patch
+	status : applied
+
+hurd-i386/tg-ifaddrs_v6.diff
+	renamed: 0061-debian-tg-ifaddrs_v6.patch
+	status : applied
+
+hurd-i386/tg-remap_getcwd.diff
+	renamed: 0062-debian-tg-remap_getcwd.patch
+	status : applied
+
+hurd-i386/tg-EIEIO-fr.diff
+	renamed: 0063-debian-tg-EIEIO-fr.patch
+	status : applied
+
+hurd-i386/tg-EGREGIOUS-fr.diff
+	renamed: 0064-debian-tg-EGREGIOUS-fr.patch
+	status : applied
+
+hurd-i386/tg-io_select_timeout.diff
+	renamed: 0065-debian-tg-io_select_timeout.patch
+	status : applied
+
+hurd-i386/tg-poll_errors_fixes.diff
+	renamed: 0066-debian-tg-poll_errors_fixes.patch
+	status : applied
+
+hurd-i386/unsubmitted-clock_t_centiseconds.diff
+	renamed: 0067-debian-unsubmitted-clock_t_centiseconds.patch
+	status : applied
+
+hurd-i386/submitted-path_mounted.diff
+	renamed: 0068-debian-submitted-path_mounted.patch
+	status : applied
+
+hurd-i386/tg-sigstate_thread_reference.diff
+	renamed: 0069-debian-tg-sigstate_thread_reference.patch
+	status : applied
+
+hurd-i386/submitted-bind_umask2.diff
+	renamed: 0070-debian-submitted-bind_umask2.patch
+	status : applied
+
+hurd-i386/tg-bootstrap.diff
+	renamed: 0071-debian-tg-bootstrap.patch
+	status : applied
+
+hurd-i386/local-mach_print.diff
+	renamed: 0072-debian-local-mach_print.patch
+	status : applied
+
+hurd-i386/tg-eintr.diff
+	renamed: 0073-debian-tg-eintr.patch
+	status : applied
+
+hurd-i386/tg-ONSTACK.diff
+	renamed: 0074-debian-tg-ONSTACK.patch
+	status : applied
+
+hurd-i386/tg-libc_rwlock_recursive.diff
+	renamed: 0075-debian-tg-libc_rwlock_recursive.patch
+	status : applied
+
+hurd-i386/git-magic-pid.diff
+	renamed: 0076-debian-git-magic-pid.patch
+	status : applied
+
+hurd-i386/local-no_unsupported_ioctls.diff
+	renamed: 0077-debian-local-no_unsupported_ioctls.patch
+	status : applied
+
+hurd-i386/local-exec_filename.diff
+	renamed: 0078-debian-local-exec_filename.patch
+	status : applied
+
+hurd-i386/libpthread_sigs.diff
+	renamed: 0079-debian-libpthread_sigs.patch
+	status : applied
+
+hurd-i386/local-hurd_sigstate-PLT.diff
+	renamed: 0080-debian-local-hurd_sigstate-PLT.patch
+	status : applied
+
+hurd-i386/git-interrupt_timeout_EIO.diff
+	renamed: 0081-debian-git-interrupt_timeout_EIO.patch
+	status : applied
+
+hurd-i386/git-interrupt_timeout.diff
+	renamed: 0082-debian-git-interrupt_timeout.patch
+	status : applied
+
+hurd-i386/git-intr-msg.diff
+	renamed: 0083-debian-git-intr-msg.patch
+	status : applied
+
+hurd-i386/git-pci.diff
+	renamed: 0084-debian-git-pci.patch
+	status : applied
+
+hurd-i386/git-msync.diff
+	renamed: 0085-debian-git-msync.patch
+	status : applied
+
+hurd-i386/git-spawn-open.diff
+	renamed: 0086-debian-git-spawn-open.patch
+	status : applied
+
+hurd-i386/git-tst-preadvwritev2-common.c.diff
+	renamed: 0087-debian-git-tst-preadvwritev2-common.c.patch
+	status : applied
+
+hurd-i386/git-fcntl64.diff
+	renamed: 0088-debian-git-fcntl64.patch
+	status : applied
+
+hurd-i386/git-lockf-0.diff
+	renamed: 0089-debian-git-lockf-0.patch
+	status : applied
+
+hurd-i386/tg-WRLCK-upgrade.diff
+	renamed: 0090-debian-tg-WRLCK-upgrade.patch
+	status : applied
+
+hurd-i386/git-libpthread_setpshared.diff
+	renamed: 0091-debian-git-libpthread_setpshared.patch
+	status : applied
+
+hurd-i386/git-AT_EMPTY_PATH.diff
+	renamed: 0092-debian-git-AT_EMPTY_PATH.patch
+	status : applied
+
+hurd-i386/git-altstack.diff
+	renamed: 0093-debian-git-altstack.patch
+	status : applied
+
+hurd-i386/git-renameat2.diff
+	renamed: 0094-debian-git-renameat2.patch
+	status : applied
+
+i386/local-biarch.diff
+	renamed: 0095-debian-local-biarch.patch
+	status : applied
+
+i386/unsubmitted-quiet-ldconfig.diff
+	renamed: 0096-debian-unsubmitted-quiet-ldconfig.patch
+	status : applied
+
+kfreebsd/submitted-waitid.diff
+	renamed: 0097-debian-submitted-waitid.patch
+	status : applied
+
+kfreebsd/submitted-auxv.diff
+	renamed: 0098-debian-submitted-auxv.patch
+	status : applied
+
+kfreebsd/local-config_h_in.patch
+	renamed: 0099-debian-local-config_h_in.patch
+	status : applied
+
+kfreebsd/local-grantpt.diff
+	renamed: 0100-debian-local-grantpt.patch
+	status : applied
+
+kfreebsd/local-sysdeps.diff
+	renamed: 0101-debian-local-sysdeps.patch
+	status : applied
+
+kfreebsd/local-fbtl.diff
+	renamed: 0102-debian-local-fbtl.patch
+	status : applied
+
+kfreebsd/local-fbtl-depends.diff
+	renamed: 0103-debian-local-fbtl-depends.patch
+	status : applied
+
+kfreebsd/local-scripts.diff
+	renamed: 0104-debian-local-scripts.patch
+	status : applied
+
+kfreebsd/local-getaddrinfo-freebsd-kernel.diff
+	renamed: 0105-debian-local-getaddrinfo-freebsd-kernel.patch
+	status : applied
+
+kfreebsd/local-no-execfn.diff
+	renamed: 0106-debian-local-no-execfn.patch
+	status : applied
+
+m68k/local-dwarf2-buildfix.diff
+	renamed: 0107-debian-local-dwarf2-buildfix.patch
+	status : applied
+
+m68k/local-reloc.diff
+	renamed: 0108-debian-local-reloc.patch
+	status : applied
+
+m68k/submitted-gcc34-seccomment.diff
+	renamed: 0109-debian-submitted-gcc34-seccomment.patch
+	status : applied
+
+mips/submitted-rld_map.diff
+	renamed: 0110-debian-submitted-rld_map.patch
+	status : applied
+
+powerpc/local-powerpc8xx-dcbz.diff
+	renamed: 0111-debian-local-powerpc8xx-dcbz.patch
+	status : applied
+
+riscv64/git-thread-debugging.diff
+	renamed: 0112-debian-git-thread-debugging.patch
+	status : applied
+
+sh4/local-fpscr_values.diff
+	renamed: 0113-debian-local-fpscr_values.patch
+	status : applied
+
+sparc/submitted-sparc64-socketcall.diff
+	renamed: 0114-debian-submitted-sparc64-socketcall.patch
+	status : applied
+
+all/local-alias-et_EE.diff
+	renamed: 0115-debian-local-alias-et_EE.patch
+	status : applied
+
+all/local-remove-manual.diff
+all/local-ru_RU.diff
+all/local-ldd.diff
+all/local-nis-shadow.diff
+all/submitted-po-fr-fixes.diff
+any/local-rtlddir-cross.diff
+any/local-asserth-decls.diff
+any/local-bindresvport_blacklist.diff
+any/local-fhs-linux-paths.diff
+any/local-fhs-nscd.diff
+any/local-ld-multiarch.diff
+any/local-ldso-disable-hwcap.diff
+any/local-ldconfig.diff
+any/local-nss-upgrade.diff
+any/local-stubs_h.diff
+any/local-tcsetaddr.diff
+any/local-tst-mktime2.diff
+any/local-nss-overflow.diff
+any/submitted-missing-etc-hosts.diff
+any/submitted-bits-fcntl_h-at.diff
+any/submitted-nptl-invalid-td.patch
+any/local-ldconfig-multiarch.diff
+any/local-disable-libnss-db.diff
+any/local-revert-bz13979.diff
+any/local-tst-eintr1-eagain.diff
+any/unsubmitted-ldso-machine-mismatch.diff
+any/unsubmitted-dlopen-static-crash.diff
+any/local-ldconfig-ignore-ld.so.diff
+any/local-libpic.diff
+any/local-bootstrap-headers.diff
+any/submitted-resolv-unaligned.diff
+any/local-cudacc-float128.diff
+any/git-libio-stdout-putc.diff

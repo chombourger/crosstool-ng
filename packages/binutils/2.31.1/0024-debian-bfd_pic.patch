@@ -1,0 +1,29 @@
+Author: Balint Reczey <balint@balintreczey.hu>
+Description: Build libbfd with -fPIC to allow linking with PIE binaries
+
+Index: binutils-2.31.1/bfd/Makefile.am
+===================================================================
+--- binutils-2.31.1.orig/bfd/Makefile.am
++++ binutils-2.31.1/bfd/Makefile.am
+@@ -52,7 +52,7 @@ ZLIBINC = @zlibinc@
+ 
+ WARN_CFLAGS = @WARN_CFLAGS@
+ NO_WERROR = @NO_WERROR@
+-AM_CFLAGS = $(WARN_CFLAGS) $(ZLIBINC)
++AM_CFLAGS = $(WARN_CFLAGS) $(ZLIBINC) -fPIC
+ AM_CPPFLAGS = -DBINDIR='"$(bindir)"'
+ if PLUGINS
+ bfdinclude_HEADERS += $(INCDIR)/plugin-api.h
+Index: binutils-2.31.1/bfd/Makefile.in
+===================================================================
+--- binutils-2.31.1.orig/bfd/Makefile.in
++++ binutils-2.31.1/bfd/Makefile.in
+@@ -477,7 +477,7 @@ libbfd_la_LDFLAGS = $(am__append_1) -rel
+ # case both are empty.
+ ZLIB = @zlibdir@ -lz
+ ZLIBINC = @zlibinc@
+-AM_CFLAGS = $(WARN_CFLAGS) $(ZLIBINC)
++AM_CFLAGS = $(WARN_CFLAGS) $(ZLIBINC) -fPIC
+ AM_CPPFLAGS = -DBINDIR='"$(bindir)"' @HDEFINES@ @COREFLAG@ @TDEFINES@ \
+ 	$(CSEARCH) $(CSWITCHES) $(HAVEVECS) @INCINTL@
+ @PLUGINS_TRUE@LIBDL = @lt_cv_dlopen_libs@

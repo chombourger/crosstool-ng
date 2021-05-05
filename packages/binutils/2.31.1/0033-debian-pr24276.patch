@@ -1,0 +1,126 @@
+
+Skip symbol defined by linker when checking copy reloc on protected
+symbol.
+
+bfd/
+
+	PR ld/24276
+	* elf64-x86-64.c (elf_x86_64_check_relocs): Skip symbol defined
+	by linker when checking copy reloc on protected symbol.
+
+ld/
+
+	PR ld/24276
+	* testsuite/ld-i386/i386.exp: Run PR ld/24276 test.
+	* testsuite/ld-x86-64/x86-64.exp: Likewise.
+	* testsuite/ld-i386/pr24276.dso: New file.
+	* testsuite/ld-i386/pr24276.warn: Likewise.
+	* testsuite/ld-x86-64/pr24276.dso: Likewise.
+	* testsuite/ld-x86-64/pr24276.warn: Likewise.
+---
+ bfd/elf64-x86-64.c                  | 2 ++
+ ld/testsuite/ld-i386/i386.exp       | 9 +++++++++
+ ld/testsuite/ld-i386/pr24276.dso    | 9 +++++++++
+ ld/testsuite/ld-i386/pr24276.warn   | 1 +
+ ld/testsuite/ld-x86-64/pr24276.dso  | 9 +++++++++
+ ld/testsuite/ld-x86-64/pr24276.warn | 1 +
+ ld/testsuite/ld-x86-64/x86-64.exp   | 9 +++++++++
+ 7 files changed, 40 insertions(+)
+ create mode 100644 ld/testsuite/ld-i386/pr24276.dso
+ create mode 100644 ld/testsuite/ld-i386/pr24276.warn
+ create mode 100644 ld/testsuite/ld-x86-64/pr24276.dso
+ create mode 100644 ld/testsuite/ld-x86-64/pr24276.warn
+
+Index: binutils-2.31.1/bfd/elf64-x86-64.c
+===================================================================
+--- binutils-2.31.1.orig/bfd/elf64-x86-64.c
++++ binutils-2.31.1/bfd/elf64-x86-64.c
+@@ -2238,6 +2238,8 @@ check_pic:
+ 	      bfd_boolean no_copyreloc_p
+ 		= (info->nocopyreloc
+ 		   || (h != NULL
++		       && !h->root.linker_def
++		       && !h->root.ldscript_def
+ 		       && eh->def_protected
+ 		       && elf_has_no_copy_on_protected (h->root.u.def.section->owner)));
+ 	      if ((sec->flags & SEC_ALLOC) != 0
+Index: binutils-2.31.1/ld/testsuite/ld-i386/i386.exp
+===================================================================
+--- binutils-2.31.1.orig/ld/testsuite/ld-i386/i386.exp
++++ binutils-2.31.1/ld/testsuite/ld-i386/i386.exp
+@@ -786,6 +786,15 @@ if { [isnative]
+ 	    "pr19319" \
+ 	] \
+ 	[list \
++	    "Build pr24276.so" \
++	    "-shared -nostdlib -nostartfiles \
++	     -Ltmpdir $srcdir/$subdir/pr24276.dso" \
++	    "-Wa,-mx86-used-note=yes" \
++	    { pr19319b.S } \
++	    {{warning_output pr24276.warn}} \
++	    "pr24276.so" \
++	] \
++	[list \
+ 	    "Build property 1" \
+ 	    "" \
+ 	    "" \
+Index: binutils-2.31.1/ld/testsuite/ld-i386/pr24276.dso
+===================================================================
+--- /dev/null
++++ binutils-2.31.1/ld/testsuite/ld-i386/pr24276.dso
+@@ -0,0 +1,9 @@
++INPUT(pr19319.so)
++SECTIONS {
++  my_section : {
++    __start_my_section = .;
++    *(my_section);
++    __stop_my_section = .;
++
++  }
++}
+Index: binutils-2.31.1/ld/testsuite/ld-i386/pr24276.warn
+===================================================================
+--- /dev/null
++++ binutils-2.31.1/ld/testsuite/ld-i386/pr24276.warn
+@@ -0,0 +1 @@
++.*contains output sections.*
+Index: binutils-2.31.1/ld/testsuite/ld-x86-64/pr24276.dso
+===================================================================
+--- /dev/null
++++ binutils-2.31.1/ld/testsuite/ld-x86-64/pr24276.dso
+@@ -0,0 +1,9 @@
++INPUT(pr19319.so)
++SECTIONS {
++  my_section : {
++    __start_my_section = .;
++    *(my_section);
++    __stop_my_section = .;
++
++  }
++}
+Index: binutils-2.31.1/ld/testsuite/ld-x86-64/pr24276.warn
+===================================================================
+--- /dev/null
++++ binutils-2.31.1/ld/testsuite/ld-x86-64/pr24276.warn
+@@ -0,0 +1 @@
++.*contains output sections.*
+Index: binutils-2.31.1/ld/testsuite/ld-x86-64/x86-64.exp
+===================================================================
+--- binutils-2.31.1.orig/ld/testsuite/ld-x86-64/x86-64.exp
++++ binutils-2.31.1/ld/testsuite/ld-x86-64/x86-64.exp
+@@ -924,6 +924,15 @@ if { [isnative] && [which $CC] != 0 } {
+ 	    "pr19319" \
+ 	] \
+ 	[list \
++	    "Build pr24276.so" \
++	    "-shared -nostdlib -nostartfiles \
++	     -Ltmpdir $srcdir/$subdir/pr24276.dso" \
++	    "-Wa,-mx86-used-note=yes" \
++	    { pr19319b.S } \
++	    {{warning_output pr24276.warn}} \
++	    "pr24276.so" \
++	] \
++	[list \
+ 	    "Build property 1" \
+ 	    "" \
+ 	    "" \

@@ -1,0 +1,10 @@
+Index: binutils-2.31.1/bfd/development.sh
+===================================================================
+--- binutils-2.31.1.orig/bfd/development.sh
++++ binutils-2.31.1/bfd/development.sh
+@@ -16,4 +16,4 @@
+ # along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ 
+ # Controls whether to enable development-mode features by default.
+-development=true
++development=false

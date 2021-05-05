@@ -1,0 +1,19 @@
+
+AT_EXECFN is Linux specific
+
+Index: glibc-2.28/elf/rtld.c
+===================================================================
+--- glibc-2.28.orig/elf/rtld.c
++++ glibc-2.28/elf/rtld.c
+@@ -1094,9 +1094,11 @@ of this helper program; chances are you
+ 	  case AT_ENTRY:
+ 	    av->a_un.a_val = *user_entry;
+ 	    break;
++# ifdef AT_EXECFN	    
+ 	  case AT_EXECFN:
+ 	    av->a_un.a_val = (uintptr_t) _dl_argv[0];
+ 	    break;
++# endif	    
+ 	  }
+ #endif
+     }

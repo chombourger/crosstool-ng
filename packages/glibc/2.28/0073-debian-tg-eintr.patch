@@ -1,0 +1,31 @@
+commit 230b85f414291ac955827aba15cfbd103ab6ebdd
+Author: Samuel Thibault <samuel.thibault@ens-lyon.org>
+Date:   Thu Jun 9 01:15:10 2016 +0200
+
+    Fix pipe() call returning EINTR sometimes
+    
+    because it uses a critical section
+
+Index: glibc-2.28/hurd/hurdsock.c
+===================================================================
+--- glibc-2.28.orig/hurd/hurdsock.c
++++ glibc-2.28/hurd/hurdsock.c
+@@ -52,6 +52,7 @@ _hurd_socket_server (int domain, int dea
+       return MACH_PORT_NULL;
+     }
+ 
++retry:
+   HURD_CRITICAL_BEGIN;
+   __mutex_lock (&lock);
+ 
+@@ -102,6 +103,10 @@ _hurd_socket_server (int domain, int dea
+   __mutex_unlock (&lock);
+   HURD_CRITICAL_END;
+ 
++  if (!server && errno == EINTR)
++    /* Got a signal while inside an RPC of the critical section, retry again */
++    goto retry;
++
+   return server;
+ }
+ 

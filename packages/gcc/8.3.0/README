@@ -1,0 +1,30 @@
+Get Debian's sources for gcc with:
+
+ $ apt-get source gcc-8
+
+Install build dependencies
+
+ $ cd gcc-8-8.3.0
+ $ sudo mk-build-deps -i -r
+
+Build the gcc-8 package:
+
+ $ dpkg-buildpackage -b -uc -us
+ # you may interrupt the build after patches were applied
+
+Copy patches to this directory ($CT_NG_GCC):
+
+ $ CT_NG_GCC=$HOME/crosstool-ng/packages/gcc/8.3.0
+ $ rm -f $CT_NG_GCC/*.{diff,patch}
+ $ cd src
+ $ i=0; for p in $(quilt series); do
+     n=$(basename $p);
+     case ${n} in
+        gdc-*|libphobos-*) continue ;;
+     esac
+     t=$(printf "%04d-%s" $i $n);
+     t=${t%.diff}.patch
+     i=$((${i} +1));
+     sed -e 's, [ab]/src/, src/,g' $p >$t
+   done
+

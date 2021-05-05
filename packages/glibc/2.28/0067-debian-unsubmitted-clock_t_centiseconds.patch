@@ -1,0 +1,59 @@
+Some applications assume centisecond precision, or at most millisecond precision
+(e.g. guile).  This is a work-around for them.
+
+---
+ getclktck.c |    5 ++---
+ setitimer.c |    2 +-
+ times.c     |    2 +-
+ 4 files changed, 8 insertions(+), 9 deletions(-)
+commit d57f2f9b4bd007846af2fb4217486ea572579010
+Author: Richard Braun <rbraun@sceen.net>
+Date:   Tue Aug 27 11:35:31 2013 +0200
+
+    Express CPU time (clock_t of times(2)) in centiseconds
+
+Index: glibc-2.28/sysdeps/mach/hurd/getclktck.c
+===================================================================
+--- glibc-2.28.orig/sysdeps/mach/hurd/getclktck.c
++++ glibc-2.28/sysdeps/mach/hurd/getclktck.c
+@@ -18,12 +18,11 @@
+ 
+ #include <time.h>
+ 
+-/* Return frequency of `times'.
+-   Since Mach reports CPU times in microseconds, we always use 1 million.  */
++/* Return frequency of `times'.  */
+ int
+ __getclktck (void)
+ {
+-  return 1000000;
++  return 100;
+ }
+ 
+ /* Before glibc 2.2, the Hurd actually did this differently, so we
+Index: glibc-2.28/sysdeps/mach/hurd/setitimer.c
+===================================================================
+--- glibc-2.28.orig/sysdeps/mach/hurd/setitimer.c
++++ glibc-2.28/sysdeps/mach/hurd/setitimer.c
+@@ -42,7 +42,7 @@ quantize_timeval (struct timeval *tv)
+   static time_t quantum = -1;
+ 
+   if (quantum == -1)
+-    quantum = 1000000 / __getclktck ();
++    quantum = 100 / __getclktck ();
+ 
+   tv->tv_usec = ((tv->tv_usec + (quantum - 1)) / quantum) * quantum;
+   if (tv->tv_usec >= 1000000)
+Index: glibc-2.28/sysdeps/mach/hurd/times.c
+===================================================================
+--- glibc-2.28.orig/sysdeps/mach/hurd/times.c
++++ glibc-2.28/sysdeps/mach/hurd/times.c
+@@ -29,7 +29,7 @@
+ static inline clock_t
+ clock_from_time_value (const time_value_t *t)
+ {
+-  return t->seconds * 1000000 + t->microseconds;
++  return t->seconds * 100 + t->microseconds / 10000;
+ }
+ 
+ /* Store the CPU time used by this process and all its

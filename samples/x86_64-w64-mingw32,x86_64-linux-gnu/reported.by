@@ -1,0 +1,3 @@
+reporter_name="Cedric Hombourger"
+reporter_url="https://github.com/chombourger/crosstool-ng"
+reporter_comment="cross-compiler for Debian 10/x86_64 on w64-mingw32"

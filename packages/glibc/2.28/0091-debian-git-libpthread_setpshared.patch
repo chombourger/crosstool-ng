@@ -1,0 +1,65 @@
+commit 55137f7dd939bc8403a63f4cade73ff90575b821
+Author: Samuel Thibault <samuel.thibault@ens-lyon.org>
+Date:   Wed Jan 2 22:21:34 2019 +0100
+
+    hurd: advertise *_setpshared as not supported
+    
+    The functions themselves return 0, but initializing a mutex/etc with       .
+    pshared set to 1 will fail anyway                                          .
+    
+            * sysdeps/htl/pt-barrierattr-setpshared.c
+            (pthread_barrierattr_setpshared): Add stub warning.
+            * sysdeps/htl/pt-condattr-setpshared.c
+            (pthread_condattr_setpshared): Likewise.
+            * sysdeps/htl/pt-mutexattr-setpshared.c
+            (pthread_mutexattr_setpshared): Likewise.
+            * sysdeps/htl/pt-rwlockattr-setpshared.c
+            (pthread_rwlockattr_setpshared): Likewise.
+            * sysdeps/mach/hurd/htl/pt-mutexattr-setpshared.c
+            (pthread_mutexattr_setpshared): Likewise.
+
+Index: glibc-2.28/sysdeps/htl/pt-barrierattr-setpshared.c
+===================================================================
+--- glibc-2.28.orig/sysdeps/htl/pt-barrierattr-setpshared.c
++++ glibc-2.28/sysdeps/htl/pt-barrierattr-setpshared.c
+@@ -35,3 +35,4 @@ pthread_barrierattr_setpshared (pthread_
+       return EINVAL;
+     }
+ }
++stub_warning (pthread_barrierattr_setpshared)
+Index: glibc-2.28/sysdeps/htl/pt-condattr-setpshared.c
+===================================================================
+--- glibc-2.28.orig/sysdeps/htl/pt-condattr-setpshared.c
++++ glibc-2.28/sysdeps/htl/pt-condattr-setpshared.c
+@@ -35,3 +35,4 @@ pthread_condattr_setpshared (pthread_con
+       return EINVAL;
+     }
+ }
++stub_warning (pthread_condattr_setpshared)
+Index: glibc-2.28/sysdeps/htl/pt-mutexattr-setpshared.c
+===================================================================
+--- glibc-2.28.orig/sysdeps/htl/pt-mutexattr-setpshared.c
++++ glibc-2.28/sysdeps/htl/pt-mutexattr-setpshared.c
+@@ -35,3 +35,4 @@ pthread_mutexattr_setpshared (pthread_mu
+       return EINVAL;
+     }
+ }
++stub_warning (pthread_mutexattr_setpshared)
+Index: glibc-2.28/sysdeps/htl/pt-rwlockattr-setpshared.c
+===================================================================
+--- glibc-2.28.orig/sysdeps/htl/pt-rwlockattr-setpshared.c
++++ glibc-2.28/sysdeps/htl/pt-rwlockattr-setpshared.c
+@@ -35,3 +35,4 @@ pthread_rwlockattr_setpshared (pthread_r
+       return EINVAL;
+     }
+ }
++stub_warning (pthread_rwlockattr_setpshared)
+Index: glibc-2.28/sysdeps/mach/hurd/htl/pt-mutexattr-setpshared.c
+===================================================================
+--- glibc-2.28.orig/sysdeps/mach/hurd/htl/pt-mutexattr-setpshared.c
++++ glibc-2.28/sysdeps/mach/hurd/htl/pt-mutexattr-setpshared.c
+@@ -32,3 +32,4 @@ pthread_mutexattr_setpshared (pthread_mu
+   attrp->__pshared = pshared;
+   return 0;
+ }
++stub_warning (pthread_mutexattr_setpshared)

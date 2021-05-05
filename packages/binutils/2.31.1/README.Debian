@@ -1,0 +1,121 @@
+Patches from binutils 2.31.1-16
+
+Patches listed below were copied from debian/patches/series and
+their status noted. Patches preceded with '#' were not applied
+in Debian's tree and were consequently ignored.
+
+branch-updates.diff
+	renamed: 0013-debian-branch-updates.patch
+	status : applied
+
+#branch-version.diff
+	status : skipped
+
+branch-no-development.diff
+	renamed: 0014-debian-branch-no-development.patch
+	status : applied
+
+001_ld_makefile_patch.patch
+	status : already applied by ct-ng
+
+002_gprof_profile_arcs.patch
+	renamed: 0015-debian-gprof_profile_arcs.patch
+	status : applied
+
+003_gprof_see_also_monitor.patch
+	renamed: 0016-debian-gprof_see_also_monitor.patch
+	status : applied
+
+006_better_file_error.patch
+	renamed: 0017-debian-better_file_error.patch
+	status : applied
+
+012_check_ldrunpath_length.patch
+	status : already applied by ct-ng
+
+013_bash_in_ld_testsuite.patch
+	renamed: 0018-debian-bash_in_ld_testsuite.patch
+	status : applied
+
+#014_hash_style-both.patch
+	status : skipped
+
+128_ppc64_powerpc_biarch.patch
+	renamed: 0019-debian-ppc64_powerpc_biarch.patch
+	status : applied
+
+129_multiarch_libpath.patch
+	renamed: 0020-debian-multiarch_libpath.patch
+	status : applied
+
+130_gold_disable_testsuite_build.patch
+	renamed: 0021-debian-gold_disable_testsuite_build.patch
+	status : applied
+
+131_ld_bootstrap_testsuite.patch
+	renamed: 0022-debian-ld_bootstrap_testsuite.patch
+	status : applied
+
+135_bfd_version.patch
+	renamed: 0023-debian-bfd_version.patch
+	status : applied
+
+136_bfd_pic.patch
+	renamed: 0024-debian-bfd_pic.patch
+	status : applied
+
+157_ar_scripts_with_tilde.patch
+	renamed: 0025-debian-ar_scripts_with_tilde.patch
+	status : applied
+
+#158_ld_system_root.patch
+	status : skipped
+
+161_gold_dummy_zoption.diff
+	renamed: 0026-debian-gold_dummy_zoption.patch
+	status : applied
+
+# only applied for GFDL builds
+164_ld_doc_remove_xref.diff
+	renamed: 0027-debian-ld_doc_remove_xref.patch
+	status : applied
+
+gprof-build.diff
+	renamed: 0028-debian-gprof-build.patch
+	status : applied
+
+aarch64-libpath.diff
+	renamed: 0028-debian-aarch64-libpath.patch
+	status : applied
+
+#pr-ld-16428.diff
+	status : skipped
+
+mips64-default-n64.diff
+	renamed: 0029-debian-mips64-default-n64.patch
+	status : applied
+
+gold-mips.diff
+	renamed: 0030-debian-gold-mips.patch
+	status : applied
+
+i18n-fr.diff
+	renamed: 0031-debian-i18n-fr.patch
+	status : applied
+
+gold-no-keep-files-mapped.diff
+	renamed: 0032-debian-gold-no-keep-files-mapped.patch
+	status : applied
+
+# trunk backports
+pr24276.diff
+	renamed: 0033-debian-pr24276.patch
+	status : applied
+
+# experimental ...
+infinity-notes.diff
+	renamed: 0034-debian-infinity-notes.patch
+	status : applied
+
+#binutils-no-development.diff
+	status : skipped

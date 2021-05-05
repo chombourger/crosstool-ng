@@ -1,0 +1,24 @@
+Index: glibc-2.28/mach/Versions
+===================================================================
+--- glibc-2.28.orig/mach/Versions
++++ glibc-2.28/mach/Versions
+@@ -57,6 +57,7 @@ libc {
+   }
+   GLIBC_2.21 {
+     __mach_host_self_;
++    mach_print;
+   }
+ 
+   HURD_CTHREADS_0.3 {
+Index: glibc-2.28/sysdeps/mach/hurd/i386/libc.abilist
+===================================================================
+--- glibc-2.28.orig/sysdeps/mach/hurd/i386/libc.abilist
++++ glibc-2.28/sysdeps/mach/hurd/i386/libc.abilist
+@@ -1984,6 +1984,7 @@ GLIBC_2.21 _hurd_sigstate_lock F
+ GLIBC_2.21 _hurd_sigstate_pending F
+ GLIBC_2.21 _hurd_sigstate_set_global_rcv F
+ GLIBC_2.21 _hurd_sigstate_unlock F
++GLIBC_2.21 mach_print F
+ GLIBC_2.21 pthread_attr_destroy F
+ GLIBC_2.21 pthread_attr_getdetachstate F
+ GLIBC_2.21 pthread_attr_getinheritsched F

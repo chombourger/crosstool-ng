@@ -1,0 +1,18 @@
+Index: glibc-2.28/sysdeps/unix/sysv/linux/i386/readelflib.c
+===================================================================
+--- glibc-2.28.orig/sysdeps/unix/sysv/linux/i386/readelflib.c
++++ glibc-2.28/sysdeps/unix/sysv/linux/i386/readelflib.c
+@@ -62,8 +62,11 @@ process_elf_file (const char *file_name,
+ #ifndef SKIP_EM_IA_64
+ failed:
+ #endif
+-      error (0, 0, _("%s is for unknown machine %d.\n"),
+-	     file_name, elf_header->e_machine);
++      if (opt_verbose)
++	{
++	  error (0, 0, _("%s is for unknown machine %d.\n"),
++		file_name, elf_header->e_machine);
++	}
+       return 1;
+     }
+ 
